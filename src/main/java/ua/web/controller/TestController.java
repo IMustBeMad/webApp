@@ -17,7 +17,6 @@ public class TestController {
     public String printTest() {
         User user = new User();
         user.setName("Test");
-        user.setId(2L);
 
         dbManager.saveOrUpdate(user);
 
