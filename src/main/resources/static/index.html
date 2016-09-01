@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="js/lib/angular.js"></script>
+    <script src="js/lib/angular-route.js"></script>
+
+    <script type="text/javascript" src="js/controller/MainCtrl.js"></script>
+
+</head>
+
+<body ng-app="main">
+
+<a href="#/welcome">show me content</a><br>
+<a href="#/login">show me form</a>
+
+<div class="container" style="padding-top: 300px">
+    <div ng-view></div>
+</div>
+
+</body>
+</html>
