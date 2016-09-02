@@ -1,18 +1,14 @@
 angular.module('main', [
     'ngRoute'
-]).config(function ($routeProvider, $httpProvider) {
+]).config(function ($routeProvider) {
 
     $routeProvider
-        .when('/', {
-            templateUrl: 'index.html'
-        })
         .when('/welcome', {
             templateUrl: 'welcome.html'
-        })
-        .when('/login', {
-            templateUrl: 'login.html'
-        })
-        .otherwise('/');
-
-    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+        });
+    $routeProvider.when('/login', {
+            templateUrl: 'login.html',
+            controller: 'loginController'
+        });
+    $routeProvider.otherwise('/');
 });

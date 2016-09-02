@@ -1,15 +1,9 @@
-<form name="form">
+<form ng-controller="loginController" name="form">
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name">
+    <input ng-model="login.name" type="text" id="name" name="name">
 
     <label for="pass">Pass:</label>
-    <input type="text" id="pass" name="pass">
+    <input ng-model="login.pass" type="text" id="pass" name="pass">
 
-    <button type="submit" ng-click="postForm(name, pass)">Submit</button>
+    <button type="submit" ng-click="postForm(login, form)">Submit</button>
 </form>
-
-<script>
-    function postForm($scope, $http) {
-        $http.post('/login_check', $scope.name, $scope.pass)
-    }
-</script>
