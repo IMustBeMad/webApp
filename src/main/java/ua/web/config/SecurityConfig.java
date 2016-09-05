@@ -19,8 +19,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin().loginPage("/login.html")
-                .loginProcessingUrl("/login_check").usernameParameter("kos").passwordParameter("1234")
+        http.csrf().disable()
+                .formLogin().loginPage("/login.html").loginProcessingUrl("/j_spring_security_check")
+                .usernameParameter("name").passwordParameter("pass")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/login.html", "/test", "/login_check").permitAll()
