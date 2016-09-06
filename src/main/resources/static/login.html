@@ -1,9 +1,9 @@
-<form ng-controller="loginController" name="form" action="/j_spring_security_check" method="post">
+<form ng-controller="loginController" name="form">
     <label for="name">Name:</label>
     <input ng-model="login.name" type="text" id="name" name="name">
 
     <label for="pass">Pass:</label>
     <input ng-model="login.pass" type="text" id="pass" name="pass">
 
-    <button type="submit">Submit</button>
+    <button type="submit" ng-click="postForm(login, form)">Submit</button>
 </form>
