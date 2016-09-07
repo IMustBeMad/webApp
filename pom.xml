@@ -8,6 +8,17 @@
     <artifactId>1.0</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <spring.security.version>4.1.1.RELEASE</spring.security.version>
+        <spring.orm.version>4.3.2.RELEASE</spring.orm.version>
+        <hibernate.core.version>5.2.2.Final</hibernate.core.version>
+        <log4j.version>1.2.17</log4j.version>
+        <javassist.version>3.20.0-GA</javassist.version>
+        <psql.version>9.1-901.jdbc4</psql.version>
+        <tomcat.dbcp.version>7.0.55</tomcat.dbcp.version>
+        <lombok.version>1.16.10</lombok.version>
+    </properties>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -21,70 +32,63 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>4.1.1.RELEASE</version>
-        </dependency>
-
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.security</groupId>-->
-            <!--<artifactId>spring-security-core</artifactId>-->
-            <!--<version>4.1.1.RELEASE</version>-->
-        <!--</dependency>-->
-
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>4.1.1.RELEASE</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>4.3.2.RELEASE</version>
+            <version>${spring.orm.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>5.2.2.Final</version>
+            <version>${hibernate.core.version}</version>
         </dependency>
 
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
+            <version>${log4j.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-            <version>3.20.0-GA</version>
+            <version>${javassist.version}</version>
         </dependency>
 
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.1-901.jdbc4</version>
+            <version>${psql.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-dbcp</artifactId>
-            <version>7.0.55</version>
+            <version>${tomcat.dbcp.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.8</version>
+            <version>${lombok.version}</version>
         </dependency>
-
     </dependencies>
 
 </project>

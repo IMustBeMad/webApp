@@ -5,9 +5,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import ua.web.common.Credentials;
 
-@Transactional
 @Repository
+@Transactional
 public class DbManager {
 
     @Autowired
@@ -19,5 +20,11 @@ public class DbManager {
 
     public void saveOrUpdate(Object o) {
         getSession().saveOrUpdate(o);
+    }
+
+    public Credentials getUserByName(String userName) {
+        return (Credentials) getSession().createQuery("from Credentials where name = :name")
+                .setParameter("name", userName)
+                .uniqueResult();
     }
 }
